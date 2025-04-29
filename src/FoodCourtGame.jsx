@@ -25,14 +25,13 @@ const baseStalls = [
   }
 ];
 
-const stallWidth = 215;
-const spacing = 10;
+const stallWidth = 225;
 
 const stallData = baseStalls.map((stall, index) => {
   const key = stall.name.split(' ')[0].toLowerCase();
   return {
   ...stall,
-  x: index * (stallWidth + spacing),
+  x: index * (stallWidth),
   y: 0,
   image: `/src/stalls/${key}.jpg`
   };
@@ -191,23 +190,25 @@ export default function FoodCourtGame() {
         ))}
         {/* Tables under the stalls */}
         {[
-          { x: 150, y: 300 },
-          { x: 300, y: 500 },
-          { x: 550, y: 300 },
-          { x: 750, y: 500 },
+          { x: 125, y: 300 },
+          { x: 300, y: 450 },
+          { x: 525, y: 300 },
+          { x: 725, y: 450 },
         ].map((table, idx) => (
           <div
             key={idx}
-            className="absolute w-14 h-14 rounded-full bg-yellow-800 border-4 border-white shadow-md z-0"
+            className="absolute w-16 h-16 rounded-full bg-yellow-800 border-4 border-white shadow-md z-0"
             style={{ left: table.x, top: table.y }}
           />
         ))}
 
         {/* Stall Popup */}
         {activeStall && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black p-4 rounded shadow-lg border-2 border-gray-800 w-80 text-center">
-            <h2 className="font-bold text-lg mb-2">{activeStall.name}</h2>
-            <p>{activeStall.description}</p>
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+            <div className="bg-white text-black p-4 rounded shadow-lg border-2 border-gray-800 w-80 text-center relative z-20">
+              <h2 className="font-bold text-lg mb-2">{activeStall.name}</h2>
+              <p>{activeStall.description}</p>
+            </div>
           </div>
         )}
       </div>

@@ -11,10 +11,14 @@ export default function Sichuan() {
         <p className="mb-4">
           Hot and sour dishes to dispel dampness. Known for their fiery intensity and balance of acid.
         </p>
-        <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
-          <source src="/videos/central.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative z-10 bg-black p-2">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jQgAEJPW3TE?si=PaKRWDHpPVZL76md&amp;start=193" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
+        </div>
         <button
           onClick={() => navigate('/?resume=true')}
           className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all"

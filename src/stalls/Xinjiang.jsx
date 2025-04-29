@@ -10,10 +10,12 @@ export default function Xinjiang() {
           <p className="mb-6 text-sm max-w-lg text-center">
             Seafood-heavy cuisine designed to cool the body in humid coastal weather.
           </p>
-          <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
-            <source src="/videos/northern.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="relative z-10 bg-black p-2">
+            <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
+              <source src="/src/stalls/xinjiang.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <button
             onClick={() => navigate('/?resume=true')}
             className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all"

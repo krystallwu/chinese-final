@@ -10,10 +10,14 @@ export default function Zhejiang() {
         <p className="mb-6 text-sm max-w-lg text-center">
           Seafood-heavy cuisine designed to cool the body in humid coastal weather.
         </p>
-        <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
-          <source src="/videos/northern.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="relative z-10 bg-black p-2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/seo7rNxWhlg?si=YAxjFuRmHkt4FcgW&amp;start=193" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+        </div>
         <button
           onClick={() => navigate('/?resume=true')}
           className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all"
