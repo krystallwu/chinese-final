@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://your-username.github.io/chinese-final",
+  "homepage": "https://krystallwu.github.io/chinese-final",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
