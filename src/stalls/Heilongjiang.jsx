@@ -6,8 +6,8 @@ export default function Heilongjiang() {
   return (
     <div className="relative arcade-crt">
       <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
-        <h1 className="text-3xl text-yellow-300 mb-4">🍜 Welcome to Heilongjiang!🍜<br />🍜 欢迎来到黑龙江!🍜 </h1>
-        <p className="mb-4">
+        <h1 className="relative z-10 filter-none backdrop-filter-none text-3xl text-yellow-300 mb-4">🍜 Welcome to Heilongjiang!🍜<br />🍜 欢迎来到黑龙江!🍜 </h1>
+        <p className="relative z-10 filter-none backdrop-filter-none text-white">
           Warming wheat-based dishes from cold areas. Dumplings, noodles, and baked buns dominate.
         </p>
         <div className="relative z-10 bg-black p-2">

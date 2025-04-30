@@ -6,8 +6,8 @@ export default function Zhejiang() {
   return (
     <div className="relative arcade-crt">
       <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
-        <h1 className="text-3xl font-bold text-yellow-300 mb-4">🐟 Welcome to Zhejiang!🐟<br />🐟 欢迎来到浙江!🐟</h1>
-        <p className="mb-6 text-sm max-w-lg text-center">
+        <h1 className="relative z-10 filter-none backdrop-filter-none text-3xl font-bold text-yellow-300 mb-4">🐟 Welcome to Zhejiang!🐟<br />🐟 欢迎来到浙江!🐟</h1>
+        <p className="relative z-10 filter-none backdrop-filter-none text-white">
           Seafood-heavy cuisine designed to cool the body in humid coastal weather.
         </p>
         <div className="relative z-10 bg-black p-2">

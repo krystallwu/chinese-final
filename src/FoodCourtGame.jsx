@@ -45,6 +45,15 @@ export default function FoodCourtGame() {
   const [activeStall, setActiveStall] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const initialTokens = [
+    { id: 1, x: 100, y: 450 },
+    { id: 2, x: 225, y: 500 },
+    { id: 3, x: 500, y: 460 },
+    { id: 4, x: 700, y: 350 },
+    { id: 5, x: 300, y: 400 },
+  ];  
+  const [tokens, setTokens] = useState(initialTokens);
+  const [tokenCount, setTokenCount] = useState(0);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -58,14 +67,18 @@ export default function FoodCourtGame() {
   useEffect(() => {
     const handleEnter = (e) => {
       if (e.key === 'Enter' && activeStall) {
-        const path = `/stall/${activeStall.name.split(' ')[0].toLowerCase()}`;
-        navigate(path);
+        if (tokenCount >= 5) {
+          const path = `/stall/${activeStall.name.split(' ')[0].toLowerCase()}`;
+          navigate(path);
+        } else {
+          alert('You need 5 tokens to enter a stall!');
+        }
       }
     };
-  
     window.addEventListener('keydown', handleEnter);
     return () => window.removeEventListener('keydown', handleEnter);
-  }, [activeStall, navigate]);
+  }, [activeStall, tokenCount, navigate]);
+  
   
 
   useEffect(() => {
@@ -73,13 +86,24 @@ export default function FoodCourtGame() {
       if (!started) return;
       setPlayer((prev) => {
         const step = 10;
+        const playerWidth = 80;  // match your player image size
+        const playerHeight = 80;
+        const gameWidth = 900;
+        const gameHeight = 600;
+      
         let newX = prev.x;
         let newY = prev.y;
+      
         if (e.key === 'ArrowUp') newY -= step;
         else if (e.key === 'ArrowDown') newY += step;
         else if (e.key === 'ArrowLeft') newX -= step;
         else if (e.key === 'ArrowRight') newX += step;
-        return { x: newX, y: newY };
+      
+        // Clamp to boundaries
+        newX = Math.max(0, Math.min(gameWidth - playerWidth, newX));
+        newY = Math.max(0, Math.min(gameHeight - playerHeight, newY));
+      
+        return { x: newX, y: newY };      
       });
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -108,6 +132,37 @@ export default function FoodCourtGame() {
     setActiveStall(found || null);
   }, [player]);
   
+  useEffect(() => {
+    const playerBox = {
+      left: player.x,
+      right: player.x + 80,
+      top: player.y,
+      bottom: player.y + 80,
+    };
+  
+    const collected = tokens.filter(token => {
+      const tokenSize = 20; // assuming 20x20 token size
+      const tokenBox = {
+        left: token.x,
+        right: token.x + tokenSize,
+        top: token.y,
+        bottom: token.y + tokenSize,
+      };
+  
+      const overlaps =
+        playerBox.left < tokenBox.right &&
+        playerBox.right > tokenBox.left &&
+        playerBox.top < tokenBox.bottom &&
+        playerBox.bottom > tokenBox.top;
+  
+      return overlaps;
+    });
+  
+    if (collected.length > 0) {
+      setTokenCount(prev => prev + collected.length);
+      setTokens(tokens.filter(token => !collected.includes(token)));
+    }
+  }, [player, tokens]);  
   
   
 
@@ -115,7 +170,7 @@ export default function FoodCourtGame() {
     return (
         <div className="relative arcade-crt">
         <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
-        <h1 className="text-4xl md:text-5xl text-yellow-300 mb-8 drop-shadow-md tracking-widest animate-pulse">
+        <h1 className="relative z-10 filter-none backdrop-filter-none text-4xl md:text-5xl text-yellow-300 mb-8 drop-shadow-md tracking-widest animate-pulse">
             🍜 Food Court Fighter
         </h1>
         <button
@@ -132,9 +187,10 @@ export default function FoodCourtGame() {
     return (
       <div className="relative arcade-crt">
         <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl text-yellow-300 mb-8 drop-shadow-md tracking-widest animate-pulse">          🎮 How to Play          </h1>
-          <ul className="text-sm leading-relaxed mb-10 text-left">
+          <h1 className="relative z-10 filter-none backdrop-filter-none text-4xl md:text-5xl text-yellow-300 mb-8 drop-shadow-md tracking-widest animate-pulse">🎮 How to Play</h1>
+          <ul className="relative z-10 filter-none backdrop-filter-none text-white mb-8">
             <li>⬅️ ➡️ ⬆️ ⬇️ — Use arrow keys to move your character</li>
+            <li>🧭 Navigate the food court and collect 5 tokens to enter a stall!</li>
             <li>🗺 Approach different food stalls to see regional specialties</li>
             <li>⏎ Press <kbd className="border px-1">Enter</kbd> to enter a stall</li>
             <li>🥢 Explore traditional flavors and Chinese medicinal ideas</li>
@@ -157,6 +213,9 @@ export default function FoodCourtGame() {
 
   return (
     <div className="relative arcade-crt">
+      <div className="absolute top-4 left-4 text-yellow-300 text-sm z-30">
+        Tokens: {tokenCount}
+      </div>
     <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
       {/* Game Box */}
       <div className="relative w-[900px] h-[600px] bg-gray-900 border-4 border-white rounded-lg shadow-lg overflow-hidden">
@@ -167,7 +226,19 @@ export default function FoodCourtGame() {
           className="absolute w-20 h-20 object-contain z-20"
           style={{ left: player.x, top: player.y }}
         />
-  
+        {/* Tokens */}
+        {tokens.map(token => (
+        <div
+          key={token.id}
+          className="z-10 filter-none backdrop-filter-none absolute bg-yellow-300 rounded-full border border-white shadow-md"
+          style={{
+            width: '20px',
+            height: '20px',
+            left: `${token.x}px`,
+            top: `${token.y}px`,
+          }}
+        />
+        ))}
         {/* Stalls */}
         {stallData.map(stall => (
           <div
@@ -213,7 +284,7 @@ export default function FoodCourtGame() {
         )}
       </div>
       {activeStall && (
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-yellow-300">
+      <div className="z-10 filter-none backdrop-filter-none absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-yellow-300">
         Press <kbd className="border px-1">Enter</kbd> to enter {activeStall.name}
       </div>
       )}
