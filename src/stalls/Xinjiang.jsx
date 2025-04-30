@@ -5,10 +5,12 @@ export default function Xinjiang() {
 
   return (
     <div className="relative arcade-crt">
-        <div className="flex flex-col items-center justify-center h-screen bg-black text-center text-white px-4">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-black text-center text-white px-4 py-4">
           <h1 className="relative z-10 filter-none backdrop-filter-none text-3xl font-bold text-yellow-300 mb-4">🍢 Welcome to Xinjiang!🍢<br />🍢 欢迎来到新疆!🍢</h1>
-          <p className="relative z-10 filter-none backdrop-filter-none text-white">
-            Seafood-heavy cuisine designed to cool the body in humid coastal weather.
+          <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">
+            Flavor profiles: Spicy, aromatic, and hearty <br />
+            Signature ingredients: Lamb, cumin, and chili peppers <br />
+            Climate: Arid and dry, with large temperature variations (freezing nights and hot days) <br />
           </p>
           <div className="relative z-10 bg-black p-2">
             <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
@@ -16,9 +18,29 @@ export default function Xinjiang() {
               Your browser does not support the video tag.
             </video>
           </div>
+          <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">The above picture is Krystal eating lamb skewers from a halal restaurant in New World Mall located in Flushing, Queens. <br /> 
+          The restaurant is pictured below. </p>
+          <div className="relative z-10 bg-black p-2">
+            <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
+              <source src="/src/stalls/Skewers.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Pictured below is a Xinjiang cold dish, 大盘鸡拌菜, from a restaurant in Johns Creek, GA called Masterpiece.</p>
+          <img
+            width="850"
+            src="/src/stalls/xinjiang_food.png"
+            alt="Delicious dish"
+            className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
+          />
+          <p className="relative z-10 filter-none backdrop-filter-none text-white">
+          Xinjiang’s arid, high-altitude climate and nomadic culture led to diets heavy in lamb, bread, and spices—warming foods used to combat the internal 寒气 
+          (cold) of the environment. The region’s bold, spicy dishes reflect a practical and medicinal need to stoke internal fire (火气) and sustain energy in
+           cold, dry conditions, reinforcing the belief that food should counter environmental extremes.
+          </p>
           <button
             onClick={() => navigate('/?resume=true')}
-            className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all"
+            className="z-10 mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all"
           >
             ⬅ Back to Game
           </button>
