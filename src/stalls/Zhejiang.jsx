@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Fish from '/src/stalls/zhejiang_fish.png';
+import DongpoPork from '/src/stalls/dongpo_pork.png';
 export default function Zhejiang() {
   const navigate = useNavigate();
 
@@ -25,7 +27,7 @@ export default function Zhejiang() {
         <img
           width="800"
           height="450"
-          src="/src/stalls/zhejiang_fish.png"
+          src={Fish}
           alt="Fish"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
@@ -33,7 +35,7 @@ export default function Zhejiang() {
         <img
           width="800"
           height="450"
-          src="/src/stalls/dongpo_pork.png"
+          src={DongpoPork}
           alt="Dongpo pork"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />

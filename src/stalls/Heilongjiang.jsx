@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import HFood from '/src/stalls/heilongjiang_food.jpg';
 
 export default function Heilongjiang() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function Heilongjiang() {
         <img
           width="800"
           height="450"
-          src="/src/stalls/heilongjiang_food.jpg"
+          src={HFood}
           alt="Lamb hotpot"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />

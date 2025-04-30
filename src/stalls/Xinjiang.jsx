@@ -1,5 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import food from '/src/stalls/xinjiang_food.png';
+import tasteTest from '/src/stalls/xinjiang.mp4';
+import skewers from '/src/stalls/Skewers.mp4';
+
 export default function Xinjiang() {
   const navigate = useNavigate();
 
@@ -15,7 +19,7 @@ export default function Xinjiang() {
           </p>
           <div className="relative z-10 bg-black p-2">
             <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
-              <source src="/src/stalls/xinjiang.mp4" type="video/mp4" />
+              <source src={tasteTest} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -23,14 +27,14 @@ export default function Xinjiang() {
           The restaurant is pictured below. </p>
           <div className="relative z-10 bg-black p-2">
             <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
-              <source src="/src/stalls/Skewers.mp4" type="video/mp4" />
+              <source src={skewers} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Pictured below is a Xinjiang cold dish, 大盘鸡拌菜, from a restaurant in Johns Creek, GA called Masterpiece.</p>
           <img
             width="850"
-            src="/src/stalls/xinjiang_food.png"
+            src={food}
             alt="Xinjiang cold dish"
             className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
           />

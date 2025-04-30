@@ -2,26 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import playerImg from './assets/player.png';
 import { useLocation } from 'react-router-dom';
+import Xinjiang from './stalls/xinjiang.jpg';
+import Zhejiang from './stalls/zhejiang.jpg';
+import Heilongjiang from './stalls/heilongjiang.jpg';
+import Sichuan from './stalls/sichuan.jpg';
+
 const baseStalls = [
   {
     id: 1,
     name: 'Zhejiang Bistro',
-    description: 'Bestsellers: Vinegar fish, Dongpo pork'
+    description: 'Bestsellers: Vinegar fish, Dongpo pork',
+    image: Zhejiang
   },
   {
     id: 2,
     name: 'Xinjiang Cuisine',
-    description: 'Bestsellers: Lamb skewers, Nang bread'
+    description: 'Bestsellers: Lamb skewers, Nang bread',
+    image: Xinjiang
   },
   {
     id: 3,
     name: 'Heilongjiang Cuisine',
-    description: 'Bestsellers: Guobaorou, Dumplings'
+    description: 'Bestsellers: Guobaorou, Dumplings',
+    image: Heilongjiang
   },
   {
     id: 4,
     name: 'Sichuan Express',
-    description: 'Bestsellers: Mapo tofu, Mala hotpot'
+    description: 'Bestsellers: Mapo tofu, Mala hotpot',
+    image: Sichuan
   }
 ];
 
@@ -32,8 +41,7 @@ const stallData = baseStalls.map((stall, index) => {
   return {
   ...stall,
   x: index * (stallWidth),
-  y: 0,
-  image: `/src/stalls/${key}.jpg`
+  y: 0
   };
 });
 
@@ -175,7 +183,7 @@ export default function FoodCourtGame() {
         </h1>
         <button
             onClick={() => setShowInstructions(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg border-4 border-white transition-all duration-300 text-sm"
+            className="z-10 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg border-4 border-white transition-all duration-300 text-sm"
         >
             Start Game
         </button>
@@ -201,7 +209,7 @@ export default function FoodCourtGame() {
               setShowInstructions(false);
               setStarted(true);
             }}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg border-4 border-white transition-all duration-300 text-sm">
+            className="z-10 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg border-4 border-white transition-all duration-300 text-sm">
             Let’s Go!
           </button>
         </div>

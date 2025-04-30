@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css'; 
+import SichuanFood from '/src/stalls/sichuan_food.png';
+import SichuanFood2 from '/src/stalls/sichuan_food2.png';
 
 export default function Sichuan() {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ export default function Sichuan() {
         <img
           width="800"
           height="450"
-          src="/src/stalls/sichuan_food.png"
+          src={SichuanFood}
           alt="Dish collage"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
@@ -34,7 +36,7 @@ export default function Sichuan() {
         <img
           width="800"
           height="450"
-          src="/src/stalls/sichuan_food2.png"
+          src={SichuanFood2}
           alt="Dish collage "
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
