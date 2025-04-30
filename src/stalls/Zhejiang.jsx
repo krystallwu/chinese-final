@@ -11,6 +11,7 @@ export default function Zhejiang() {
           Flavor profiles: Light, fresh, and slightly sweet <br />
           Signature ingredients: Fish, bamboo shoots, and rice <br />
           Climate: Humid subtropical, mild winters <br />
+          Native vegetables: Bamboo shoots (竹笋), tatsoi (塌棵菜), lotus root (莲藕), amaranth greens (苋菜) <br />
         </p>
         <div className="relative z-10 bg-black p-2">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/seo7rNxWhlg?si=YAxjFuRmHkt4FcgW&amp;start=193" 

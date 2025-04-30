@@ -11,6 +11,7 @@ export default function Xinjiang() {
             Flavor profiles: Spicy, aromatic, and hearty <br />
             Signature ingredients: Lamb, cumin, and chili peppers <br />
             Climate: Arid and dry, with large temperature variations (freezing nights and hot days) <br />
+            Native vegetables: Eggplant (茄子), tomatoes (西红柿), bell peppers (辣椒), pumpkin/squash (南瓜) <br />
           </p>
           <div className="relative z-10 bg-black p-2">
             <video controls className="w-full max-w-xl mx-auto rounded shadow-lg border-2 border-white">
@@ -36,7 +37,9 @@ export default function Xinjiang() {
           <p className="relative z-10 filter-none backdrop-filter-none text-white">
           Xinjiang’s arid, high-altitude climate and nomadic culture led to diets heavy in lamb, bread, and spices—warming foods used to combat the internal 寒气 
           (cold) of the environment. The region’s bold, spicy dishes reflect a practical and medicinal need to stoke internal fire (火气) and sustain energy in
-           cold, dry conditions, reinforcing the belief that food should counter environmental extremes.
+           cold, dry conditions, reinforcing the belief that food should counter environmental extremes. Xinjiang's home to the Uyghur people,
+           who are traditionally predominantly Muslim, so the region's cuisine is not centered around pork, unlike a majority of Chinese cuisines. 
+           Not only that, but dairy based dishes are popular as well, and the moistness of yogurt and dairy counters the dry environment of Xinjiang well.
           </p>
           <button
             onClick={() => navigate('/?resume=true')}

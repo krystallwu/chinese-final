@@ -12,6 +12,7 @@ export default function Sichuan() {
           Flavor profiles: Spicy, numbing, and fragrant <br />
           Signature ingredients: Sichuan peppercorn, chili oil, and garlic <br />
           Climate: Humid and hot summers, cold winters <br />
+          Native vegetables: Chili peppers (辣椒), garlic (大蒜), green peppercorn leaves (花椒叶), yam (山药) <br />
         </p>
         <div className="relative z-10 bg-black p-2">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/jQgAEJPW3TE?si=PaKRWDHpPVZL76md&amp;start=193" 

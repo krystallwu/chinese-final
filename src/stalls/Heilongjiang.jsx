@@ -11,6 +11,7 @@ export default function Heilongjiang() {
           Flavor profiles: Hearty, warming, and comforting <br />
           Signature ingredients: Buckwheat, mushrooms, and game meats <br />
           Climate: Cold winters, short summers <br />
+          Native vegetables: Potatoes (土豆), carrots (胡萝卜), turnips (萝卜), cabbage (卷心菜) <br />
         </p>
         <div className="relative z-10 bg-black p-2">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/9Or0drDHbMQ?si=R9AKdaVof_d8Z32s" 
@@ -31,7 +32,10 @@ export default function Heilongjiang() {
         <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Heilongjiang, bordering Siberia, faces long, 
           frigid winters. Its cuisine—rich in wheat, stews, and fried foods—was designed to generate warmth and resist 寒气 (cold energy). 
           These heavier, cooked dishes are aligned with warming (温热) dietary principles in traditional Chinese medicine, aimed at strengthening qi and preserving 
-          internal heat, vital for survival in northern climates.</p>
+          internal heat, vital for survival in northern climates. Not only that, but Heilongjiang is home to the eight great wildernesses, consisting of
+          China Snow Town, Siberia Tiger Park, Snow Valley, Fenghuangshan National Geopark, China's Snow Town, Xuexiang National Forest Park, Yabuli Ski Resort, 
+          and Yabuli Sun Mountain. Its location also inspired Chinese-Russian fusion dishes like Borscht, smoked sausage, and sourdough. Because of the many minority 
+          groups that reside there and the great wildernesses available, HeilongJiang cuisine consists of game like deer, boar, horse, and pheasant. </p>
         <button
           onClick={() => navigate('/?resume=true')}
           className="z-10 mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg border-2 border-white transition-all">
