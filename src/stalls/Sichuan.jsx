@@ -27,7 +27,7 @@ export default function Sichuan() {
           width="800"
           height="450"
           src="/src/stalls/sichuan_food.png"
-          alt="Delicious dish"
+          alt="Dish collage"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
         <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Pictured below are Sichuan dishes from a restaurant in Atlanta Chinatown food court called Chongqing Hotpot.</p>
@@ -35,7 +35,7 @@ export default function Sichuan() {
           width="800"
           height="450"
           src="/src/stalls/sichuan_food2.png"
-          alt="Delicious dish"
+          alt="Dish collage "
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
         <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">

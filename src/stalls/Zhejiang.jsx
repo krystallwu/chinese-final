@@ -26,7 +26,15 @@ export default function Zhejiang() {
           width="800"
           height="450"
           src="/src/stalls/zhejiang_fish.png"
-          alt="Delicious dish"
+          alt="Fish"
+          className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
+        />
+        <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Pictured below is Dongpo pork, 东坡肉, a classic Zhejiang dish.</p>
+        <img
+          width="800"
+          height="450"
+          src="/src/stalls/dongpo_pork.png"
+          alt="Dongpo pork"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
         <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Zhejiang cuisine developed along the humid southern coast, 

@@ -26,7 +26,7 @@ export default function Heilongjiang() {
           width="800"
           height="450"
           src="/src/stalls/heilongjiang_food.jpg"
-          alt="Delicious dish"
+          alt="Lamb hotpot"
           className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
         />
         <p className="relative z-10 filter-none backdrop-filter-none text-white py-2">Heilongjiang, bordering Siberia, faces long, 

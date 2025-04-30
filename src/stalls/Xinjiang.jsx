@@ -31,7 +31,7 @@ export default function Xinjiang() {
           <img
             width="850"
             src="/src/stalls/xinjiang_food.png"
-            alt="Delicious dish"
+            alt="Xinjiang cold dish"
             className="w-[500px] z-10 w-64 rounded shadow-lg py-2"
           />
           <p className="relative z-10 filter-none backdrop-filter-none text-white">
