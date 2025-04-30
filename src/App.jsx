@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter basename="/chinese-game">
+    <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={<FoodCourtGame />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/stall/sichuan" element={<Sichuan />} />
         </Routes>
       </div> 
-    </BrowserRouter>
+    </Router>
   );
 }
 
