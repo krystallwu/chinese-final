@@ -1,6 +1,7 @@
 # Food Court Fighter 
 
 An interactive web experience where players explore a retro-themed Chinese food court and "battle" through dishes inspired by real regional cuisines and traditional concepts like 寒气 (cold energy) and 火气 (hot energy).
+Play the game at https://chinese-game-fawn.vercel.app/ !
 
 ## About the Game
 
